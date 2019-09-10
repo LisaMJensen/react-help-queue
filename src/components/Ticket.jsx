@@ -11,23 +11,21 @@ function Ticket(props) {
             border: 2px, grey;
             border-radius: 5px;
             box-shadow: 10px 10px 5px grey;
+            margin: 20px;
           }
         `}</style>
       <h3>{props.location} - {props.names}</h3>
-      <h4>{displayTimeOpen(props.timeOpen)} ago</h4>
+      <h4>{props.formattedWaitTime}</h4>
       <p><em>{props.issue}</em></p>
     </div>
   );
 }
 
-function displayTimeOpen(timeOpen) {
-  return timeOpen.from(new Moment(), true);
-}
 
 Ticket.propTypes = {
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
-  timeOpen: PropTypes.instanceOf(Moment).isRequired
+  formattedWaitTime: PropTypes.string.isRequired
 };
 export default Ticket;
