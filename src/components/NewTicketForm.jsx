@@ -16,21 +16,30 @@ function NewTicketForm(props) {
     }
     return (
         <div>
+            <style jsx>{`
+          div {
+            margin-top: 100px;
+            margin: 50px;
+          }
+        `}</style>
             <form onSubmit={handleNewTicketFormSubmission}>
                 <input
                     type='text'
                     id='names'
                     placeholder='Pair Names'
-                    ref={(input) => { _names = input; }} />
+                    ref={(input) => { _names = input; }} style={{ width: "200px", height: "20px", fontSize: "15px", }}/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input
                     type='text'
                     id='location'
                     placeholder='Location'
-                    ref={(input) => { _location = input; }} />
+                    ref={(input) => { _location = input; }} style={{ width: "150px", height: "20px", fontSize: "15px", }}/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <textarea
                     id='issue'
                     placeholder='Describe your issue.'
-                    ref={(textarea) => { _issue = textarea; }} />
+                    ref={(textarea) => { _issue = textarea; }} style={{ width: "300px", height: "150px", fontSize: "15px",}}/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button type='submit'>Help!</button>
             </form>
         </div>
