@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
 import Moment from 'moment';
 
 function NewTicketForm(props) {
@@ -10,7 +9,7 @@ function NewTicketForm(props) {
 
     function handleNewTicketFormSubmission(event) {
         event.preventDefault();
-        props.onNewTicketCreation({ names: _names.value, location: _location.value, issue: _issue.value, id: v4(), timeOpen: new Moment() });
+        props.onNewTicketCreation({ names: _names.value, location: _location.value, issue: _issue.value, timeOpen: new Moment() });
         _names.value = '';
         _location.value = '';
         _issue.value = '';
@@ -28,19 +27,19 @@ function NewTicketForm(props) {
                     type='text'
                     id='names'
                     placeholder='Pair Names'
-                    ref={(input) => { _names = input; }} style={{ width: "200px", height: "20px", fontSize: "15px", }}/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    ref={(input) => { _names = input; }} style={{ width: "200px", height: "20px", fontSize: "15px", }} />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input
                     type='text'
                     id='location'
                     placeholder='Location'
-                    ref={(input) => { _location = input; }} style={{ width: "150px", height: "20px", fontSize: "15px", }}/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    ref={(input) => { _location = input; }} style={{ width: "150px", height: "20px", fontSize: "15px", }} />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <textarea
                     id='issue'
                     placeholder='Describe your issue.'
-                    ref={(textarea) => { _issue = textarea; }} style={{ width: "300px", height: "150px", fontSize: "15px",}}/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    ref={(textarea) => { _issue = textarea; }} style={{ width: "300px", height: "150px", fontSize: "15px", }} />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button type='submit'>Help!</button>
             </form>
         </div>
