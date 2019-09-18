@@ -9,23 +9,20 @@ function Admin(props) {
     if (props.selectedTicket.length > 0) {
         optionalSelectedTicketContent = <TicketDetail selectedTicket={props.ticketList[props.selectedTicket]} />;
     }
-
     return (
         <div>
             <h2>Admin</h2>
             {optionalSelectedTicketContent}
             <TicketList
                 ticketList={props.ticketList}
-                currentRouterPath={props.currentRouterPath}
-                onTicketSelection={props.onTicketSelection} />
+                currentRouterPath={props.currentRouterPath} />
         </div>
     );
 }
 
-Admin.PropTypes = {
-    ticketList: PropTypes.array,
+Admin.propTypes = {
+    ticketList: PropTypes.object,
     currentRouterPath: PropTypes.string.isRequired,
-    onTicketSelection: PropTypes.func.isRequired,
     selectedTicket: PropTypes.string
 };
 
