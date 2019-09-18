@@ -28,7 +28,7 @@ describe('ticketListReducer', () => {
         expect(ticketListReducer({}, action)).toEqual({
             [id]: {
                 names: names,
-                locaiton: location,
+                location: location,
                 issue: issue,
                 timeOpen: timeOpen,
                 id: id
